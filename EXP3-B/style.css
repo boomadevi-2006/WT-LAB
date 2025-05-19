@@ -1,0 +1,20 @@
+#studentrecord,#biodata,#SEM1,#SEM2,#SEM3,#SEM4,#SEM5,#SEM6,#SEM7,#SEM8,#pp,#IV,#EX {
+    background-color: rgb(118, 244, 133);
+    width: 1250px;
+    border: 10px solid rgb(14, 14, 14);
+    padding: 20px;
+    margin: 20px auto;
+    
+  }
+th,td{
+    font-size: medium;
+    padding:10px;
+  }
+  .table-bordered {
+    border: 2px solid black !important;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 2px solid black !important;
+}

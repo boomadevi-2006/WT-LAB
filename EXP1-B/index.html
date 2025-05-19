@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S.Boomadevi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-size: 18px;
+            display: flex;
+        }
+        .profile-img {
+            max-width: 5%;
+            height: 5%;
+            border-radius: 40%;  /* Make the image round */
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .profile-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .custom-table th, .custom-table td {
+            border: 3px solid black;
+            text-align: center;
+        }
+        .btn-custom {
+            background-color: #04AA6D;
+            color: white;
+            border-radius: 10px;
+        }
+        .btn-custom:hover {
+            background-color: #3e8e41;
+        }
+        footer {
+            background-color: #777;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Modal Styles */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .certificate-content {
+            background-color: white;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+        }
+
+        .certificate-content iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Close button styles */
+        .certificate-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #000;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Show modal when :target is activated */
+        .certificate-modal:target {
+            display: flex;
+        }
+
+        /* Updated Navbar */
+        .navbar-custom {
+            background-color: #333;
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #04AA6D;
+            background-color: transparent;
+        }
+        .navbar-custom .navbar-brand {
+            color: white;
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="profile.png" alt="No Image" class="profile-img">
+        <a href="#profile">Profile</a>
+        <a href="#paperpresentation">Paper Presentation</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Profile Section -->
+        <div class="row border p-4 bg-info" id="profile">
+            <h2 class="text-center text-decoration-underline">PROFILE</h2>
+            <div class="col-md-8">
+                <p><strong>Name:</strong> Boomadevi.S</p>
+                <p><strong>Roll No:</strong> 23ITR016</p>
+                <p><strong>Course:</strong> B.Tech</p>
+                <p><strong>Department:</strong> Information Technology</p>
+                <p><strong>College:</strong> Kongu Engineering College, Perundurai</p>
+                <p><strong>Years:</strong> 2024-2027</p>
+                <p><strong>Languages:</strong> Tamil, English</p>
+                <p><strong>Area of Interest:</strong> C, Java, Web Technology</p>
+            </div>
+        </div>
+        
+        <div class="row border p-4 bg-light text-dark mt-4">
+            <h2 class="text-center text-decoration-underline">Education</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Institution</th>
+                        <th>Board/University</th>
+                        <th>Year of Passing</th>
+                        <th>Major/Stream</th>
+                        <th>Percentage/CGPA</th>
+                        <th>Certificate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10th Grade</td>
+                        <td>Govt higher secondary school</td>
+                        <td>Tamil Nadu Board of Secondary Education</td>
+                        <td>2021</td>
+                        <td>Maths</td>
+                        <td>Pass</td>
+                        <td><a href="#certificateModal1" class="btn btn-custom">View Certificate</a></td>
+                    </tr>
+                    <tr>
+                        <td>12th Grade</td>
+                        <td>Govt higher Secondary School</td>
+                        <td>Tamil Nadu Board of Secondary Education</td>
+                        <td>2023</td>
+                        <td>Maths</td>
+                        <td>87.83%</td>
+                        <td><a href="#certificateModal2" class="btn btn-custom">View Certificate</a></td>
+                    </tr>
+                    <tr>
+                        <td>College</td>
+                        <td>Kongu Engineering College</td>
+                        <td>Anna University</td>
+                        <td>2025</td>
+                        <td>B.Tech IT</td>
+                        <td>8.64(Second Sem)</td>
+                        <td><a href="#certificateModal3" class="btn btn-custom">View Certificate</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </section>
+
+        <!-- Modal for 10th Certificate -->
+        <div id="certificateModal1" class="certificate-modal">
+            <div class="certificate-content">
+                <a href="#" class="close">&times;</a>
+                <h2>10th Grade Certificate</h2>
+                <iframe id="certificateFrame1" src="SSLC.pdf" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for 12th Certificate -->
+        <div id="certificateModal2" class="certificate-modal">
+            <div class="certificate-content">
+                <a href="#" class="close">&times;</a>
+                <h2>12th Grade Certificate</h2>
+                <iframe id="certificateFrame2" src="HSC+2.pdf" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Modal for College Certificate -->
+        <div id="certificateModal3" class="certificate-modal">
+            <div class="certificate-content">
+                <a href="#" class="close">&times;</a>
+                <h2>College Certificate</h2>
+                <iframe id="certificateFrame3" src="your_certificate_file_college.pdf" frameborder="0"></iframe>
+
+            </div>
+        </div>
+        
+
+
+        <!-- Paper Presentation Section -->
+        <div class="row border p-4 bg-light text-dark mt-4" id="paperpresentation">
+            <h2 class="text-center text-decoration-underline">PAPER PRESENTATION</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Outline</th>
+                            <th>PPT</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Blockchain beyond cryptocurrencies</td>
+                            <td>Blockchain ensures transparency, security, and efficiency in various fields.</td>
+                            <td><a class="btn btn-custom" href="https://1drv.ms/p/c/845f6ac8473b0b5f/EY3N2OXGV4ZFsL8QrTbfhe0BWbOZzJPekqY-Tlb8iiDQyg?e=XpSTsz">View PPT</a></td>
+                            <td>2023</td>
+                        </tr>
+                        <tr>
+                            <td>IoT and Smart Home Automation</td>
+                            <td>Integrates connected devices for automation and efficiency.</td>
+                            <td><a class="btn btn-custom" href="https://1drv.ms/p/c/845f6ac8473b0b5f/EQHylxlFBExForGqshtr3FABYF_ubXS_1t72xwi3xQ6YoA?e=sResAB">View PPT</a></td>
+                            <td>2023</td>
+                        </tr>
+                        <tr>
+                            <td>Wireless Communication</td>
+                            <td>Supports communication in mobile networks, Wi-Fi, Bluetooth, and IoT.</td>
+                            <td><a class="btn btn-custom" href="https://1drv.ms/p/c/845f6ac8473b0b5f/Ed_0uDBYcMtKjhEmTW_Kr1wBJOBFpsVhZugBgfnMrYKiOA?e=CVYlKA">View PPT</a></td>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <td>Nanotechnology - Unlocking the Invisible World</td>
+                            <td>Focuses on manipulating materials at the atomic scale for innovative solutions.</td>
+                            <td><a class="btn btn-custom" href="https://1drv.ms/p/c/845f6ac8473b0b5f/EbaCchwgBjJBofajOkHc2_YB81X7e4U_TKFvCGSBJqCHNg?e=CSVK38">View PPT</a></td>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <td>AI and Robotics in Agricultural Engineering</td>
+                            <td>Improves farming with automation, data-driven decision-making, and sustainable practices.</td>
+                            <td><a class="btn btn-custom" href="https://1drv.ms/p/c/845f6ac8473b0b5f/EVAJEKh4_r5Ij1RCyxk7OXUBnALgyBAM0aMSbCXiJTg3ew?e=vxIYwa">View PPT</a></td>
+                            <td>2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Project Section -->
+        <div class="row border p-4 bg-success text-white mt-4" id="project">
+            <h2 class="text-center text-decoration-underline">PROJECT</h2>
+            <table class="table table-bordered custom-table bg-white text-dark">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Objective</th>
+                        <th>Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GEOQUERY</td>
+                        <td>Developing a geospatial querying system based on natural language.</td>
+                        <td><a href="https://github.com/boomadevi-s/GEOQUERY">GEOQUERY</a></td>
+                    </tr>
+                    <tr>
+                        <td>CHESSGAME</td>
+                        <td>Building a fully functional chess game with AI opponent.</td>
+                        <td><a href="https://github.com/boomadevi-s/chess-game">CHESSGAME</a></td>
+                    </tr>
+                    <tr>
+                        <td>SPIN THE YARN</td>
+                        <td>Creating a creative game combining chance and storytelling.</td>
+                        <td><a href="https://github.com/boomadevi-s/spintheyarn">SPIN THE YARN</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="row border p-4 bg-warning mt-4" id="contact">
+            <h2 class="text-center text-decoration-underline">CONTACT DETAILS</h2>
+            <p><strong>Phone:</strong> 8122764998</p>
+            <p><strong>Email:</strong> <a href="mailto:boomadevis.23it@kongu.edu">boomadevis.23it@kongu.edu</a></p>
+            <p><strong>Address:</strong> Pallipalayam, Namakkal</p>
+            <p><strong>Social Links</strong></p>  
+            <a href="https://www.linkedin.com/in/boomadevi-s-9a8873310/">
+                <img src="linkedin.jpg" alt=" linkedin" style="width:50px;height:50px;">
+              </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://github.com/boomadevi-s">
+                <img src="github.jpg" alt="github" style="width:50px;height:50px;">
+                </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
